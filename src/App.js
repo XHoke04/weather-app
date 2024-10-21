@@ -56,7 +56,7 @@ function GfGWeatherApp() {
 				.get(url, {
 					params: {
 						q: input,
-						units: 'metric',
+						units: 'imperial',
 						appid: api_key,
 					},
 				})
@@ -122,11 +122,11 @@ function GfGWeatherApp() {
 							alt={weather.data.weather[0].description}
 						/>
 						{Math.round(weather.data.main.temp)}
-						<sup className="deg">°C</sup>
+						<sup className="deg">°F</sup>
 					</div>
 					<div className="des-wind">
 						<p>{weather.data.weather[0].description.toUpperCase()}</p>
-						<p>Wind Speed: {weather.data.wind.speed}m/s</p>
+						<p>Wind Speed: {weather.data.wind.speed}mph</p>
 					</div>
 				</div>
 			)}
